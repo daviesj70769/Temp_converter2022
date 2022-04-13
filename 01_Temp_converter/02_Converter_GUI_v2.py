@@ -9,7 +9,7 @@ class Converter:
         background_color = "teal"
 
         # Initialise list to hold calculation history 
-        self.all_calculations = []
+        self.all_calc_list = []
 
         # Converter Frame 
         self.converter_frame = Frame(bg=background_color,
@@ -65,12 +65,16 @@ class Converter:
         self.hist_history_frame.grid(row=5, pady=10)
 
         self.calc_hist_button = Button(self.hist_history_frame, font="Arial 12 bold",
-                                       text="Calculation history", width=15)
+                                       text="Calculation History", width=15,
+                                    command=lambda: self.history(self.all_calc_list))
         self.calc_hist_button.grid(row=0, column=0)
 
-        self.history_button = Button(self.hist_history_frame, font="Arial 12 bold",
-                                  text="history", width=5)
-        self.history_button.grid(row=0, column=1)
+        if len(self.all_calc_list) == 0:
+            self.calc_hist_button.config(state=DISABLED)
+        
+        self.calc_hist_button = Button(self.hist_history_frame, font="Arial 12 bold",
+                                  text="Help", width=5)
+        self.calc_hist_button.grid(row=0, column=1)
 
     def temp_convert(self,low):
         print (low)
@@ -113,8 +117,8 @@ class Converter:
            
             # Add Answer to list for history
             if answer != "Too Cold":
-                self.all_calculations.append(answer)
-                print(self.all_calculations)
+                self.all_calc_list.append(answer)
+                print(self.all_calc_list)
 
         except ValueError:
             self.converted_label.configure(text="Enter a number!!", fg="red")
