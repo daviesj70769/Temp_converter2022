@@ -40,8 +40,6 @@ class Convertor:
         self.filename_text.grid(row = 3)
 
         # Export Button (row 1)
-
-        
         self.export_button = Button(self.converter_frame, text="Export", 
                                   font=("Arial", "14"),
                                   padx=10, pady=10, command=self.export)

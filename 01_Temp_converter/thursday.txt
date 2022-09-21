@@ -2,3 +2,5 @@ Export Calculation History
 
 24 degrees C is -4.4 degrees F
 24 degrees C is 75.2 degrees F
+4 degrees C is -15.6 degrees F
+4 degrees C is 39.2 degrees F

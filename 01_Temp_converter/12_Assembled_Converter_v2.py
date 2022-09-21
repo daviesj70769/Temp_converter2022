@@ -345,7 +345,7 @@ class Export:
             # Creare file to hold data
             f = open(filename, "w+")
 
-            f.write("Say somthing\n\n")
+            f.write("Export Calculation History\n\n")
 
             # add new line at end of each item
             for item in calc_history:
